@@ -1,0 +1,52 @@
+:root {
+  --br-primary: 10px;
+}
+
+.grid {
+  width: 100%;
+  min-height: 500px;
+  position: relative;
+}
+
+.grid,
+.edit-mode-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-rows: repeat(auto-fit, 100px);
+  gap: 8px;
+}
+
+.placeholder {
+  border: 2px dashed rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  pointer-events: none;
+  border-radius: var(--br-primary);
+}
+
+.edit-mode-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.edit-mode-grid-cell {
+  grid-column: span 1;
+  grid-row: span 1;
+  border: 1px solid rgba(200, 200, 200, 0.5);
+  border-radius: var(--br-primary);
+}
+
+.widget {
+  background-color: lightgray;
+  border: 1px solid black;
+  border-radius: var(--br-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
